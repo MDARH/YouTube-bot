@@ -9,10 +9,10 @@ import time
 import random
 
 # Load comments from a file
-def get_comments_from_file(filename):
+def get_comments_from_file(comment_path):
     try:
         # Open the file with the correct encoding (utf-8)
-        with open(file_path, "r", encoding="utf-8") as file:
+        with open(comment_path, "r", encoding="utf-8") as file:
             comments = [line.strip() for line in file.readlines()]
         return comments
     except UnicodeDecodeError as e:
@@ -22,13 +22,12 @@ def get_comments_from_file(filename):
         print(f"An error occurred: {e}")
         return []
 
-# Get the list of comments from 'comments.txt'
 comments = get_comments_from_file("comments.txt")
 
 # Load video titles from a file
-def get_titles_from_file(filename):
+def get_titles_from_file(title_path):
     """Reads video titles from a text file and returns them as a list."""
-    with open(filename, "r") as file:
+    with open(title_path, "r") as file:
         titles = [line.strip() for line in file.readlines()]
     return titles
 
